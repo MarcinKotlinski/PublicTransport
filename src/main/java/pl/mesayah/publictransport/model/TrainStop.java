@@ -1,9 +1,9 @@
 package pl.mesayah.publictransport.model;
 
+import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-import java.awt.geom.Point2D;
 import java.util.List;
 
 public class TrainStop extends Stop {

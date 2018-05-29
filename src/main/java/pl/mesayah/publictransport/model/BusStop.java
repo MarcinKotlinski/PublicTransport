@@ -11,6 +11,6 @@ public class BusStop extends Stop {
 
     public BusStop(String place, Point2D location, List<Line> lines) {
 
-        super(place, location, lines, new Circle(10, Color.GREEN));
+        super(place, location, lines, new Circle(location.getX(), location.getY(), 10, Color.GREEN));
     }
 }

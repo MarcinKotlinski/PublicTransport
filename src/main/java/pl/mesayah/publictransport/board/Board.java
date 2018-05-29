@@ -1,22 +1,25 @@
 package pl.mesayah.publictransport.board;
 
+import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
 import pl.mesayah.publictransport.model.Stop;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Set;
 
 public class Board {
 
     private Integer width;
     private Integer height;
-    private Canvas canvas;
+    private Group canvas;
     private Set<Stop> stops;
 
     public Board(Integer width, Integer height) {
 
         this.width = width;
         this.height = height;
-        this.canvas = new Canvas(width, height);
+        this.canvas = new Group();
     }
 
     public Set<Stop> getStops() {
@@ -49,17 +52,20 @@ public class Board {
         this.height = height;
     }
 
-    public Canvas getCanvas() {
+    public Group getCanvas() {
 
         return canvas;
     }
 
-    public void setCanvas(Canvas canvas) {
+    public void setCanvas(Group canvas) {
 
         this.canvas = canvas;
     }
 
-    public void spawn(Stop stop) {
+    public void spawn(Collection<Stop> stops) {
 
+        this.stops.addAll(stops);
+
+        stops.forEach(stop -> canvas.getChildren().add(stop.getRepresentation()));
     }
 }

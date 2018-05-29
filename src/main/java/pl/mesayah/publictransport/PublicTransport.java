@@ -29,14 +29,13 @@ public class PublicTransport extends Application {
         stage.setHeight(board.getHeight());
         stage.setWidth(board.getWidth());
 
-        Group root = new Group();
-        Scene scene = new Scene(root, board.getWidth(), board.getHeight(), Color.WHITE);
+        Scene scene = new Scene(board.getCanvas(), board.getWidth(), board.getHeight(), Color.WHITE);
 
         stage.setScene(scene);
         stage.show();
 
-        Stop sampleStop = new BusStop("Oksywie Dolne", new Point2D(400, 400), Collections.<Line>emptyList());
+        StopInitializer stopInitializer = new StopInitializer();
 
-        board.spawn(sampleStop);
+        board.spawn(stopInitializer.getStops());
     }
 }
