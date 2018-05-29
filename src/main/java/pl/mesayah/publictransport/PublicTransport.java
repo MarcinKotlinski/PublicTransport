@@ -1,17 +1,10 @@
 package pl.mesayah.publictransport;
 
 import javafx.application.Application;
-import javafx.geometry.Point2D;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import pl.mesayah.publictransport.board.Board;
-import pl.mesayah.publictransport.model.BusStop;
-import pl.mesayah.publictransport.model.Line;
-import pl.mesayah.publictransport.model.Stop;
-
-import java.util.Collections;
 
 public class PublicTransport extends Application {
 
@@ -29,7 +22,7 @@ public class PublicTransport extends Application {
         stage.setHeight(board.getHeight());
         stage.setWidth(board.getWidth());
 
-        Scene scene = new Scene(board.getCanvas(), board.getWidth(), board.getHeight(), Color.WHITE);
+        Scene scene = new Scene(board.getGraphics(), board.getWidth(), board.getHeight(), Color.WHITE);
 
         stage.setScene(scene);
         stage.show();

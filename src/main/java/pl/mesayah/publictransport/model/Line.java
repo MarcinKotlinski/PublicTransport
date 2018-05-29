@@ -1,5 +1,6 @@
 package pl.mesayah.publictransport.model;
 
+import pl.mesayah.publictransport.model.stop.Stop;
 import pl.mesayah.publictransport.model.vehicle.Vehicle;
 
 import java.util.List;

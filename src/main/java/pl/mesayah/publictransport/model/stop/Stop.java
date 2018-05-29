@@ -1,7 +1,8 @@
-package pl.mesayah.publictransport.model;
+package pl.mesayah.publictransport.model.stop;
 
 import javafx.geometry.Point2D;
 import javafx.scene.shape.Shape;
+import pl.mesayah.publictransport.model.Line;
 
 import java.util.List;
 

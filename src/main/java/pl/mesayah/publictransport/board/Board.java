@@ -1,25 +1,25 @@
 package pl.mesayah.publictransport.board;
 
 import javafx.scene.Group;
-import javafx.scene.canvas.Canvas;
-import pl.mesayah.publictransport.model.Stop;
+import pl.mesayah.publictransport.model.stop.Stop;
 
 import java.util.Collection;
-import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 
 public class Board {
 
     private Integer width;
     private Integer height;
-    private Group canvas;
+    private Group graphics;
     private Set<Stop> stops;
 
     public Board(Integer width, Integer height) {
 
         this.width = width;
         this.height = height;
-        this.canvas = new Group();
+        this.graphics = new Group();
+        this.stops = new HashSet<>();
     }
 
     public Set<Stop> getStops() {
@@ -52,20 +52,20 @@ public class Board {
         this.height = height;
     }
 
-    public Group getCanvas() {
+    public Group getGraphics() {
 
-        return canvas;
+        return graphics;
     }
 
-    public void setCanvas(Group canvas) {
+    public void setGraphics(Group graphics) {
 
-        this.canvas = canvas;
+        this.graphics = graphics;
     }
 
     public void spawn(Collection<Stop> stops) {
 
         this.stops.addAll(stops);
 
-        stops.forEach(stop -> canvas.getChildren().add(stop.getRepresentation()));
+        stops.forEach(stop -> graphics.getChildren().add(stop.getRepresentation()));
     }
 }
